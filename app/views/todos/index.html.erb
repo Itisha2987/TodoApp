@@ -1,0 +1,41 @@
+
+<style>
+
+  .todo-label {
+    color: cadetblue;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+</style>
+<div>
+<br><br>
+  <center>
+  <label class="todo-label" for="new-todo">What do you want to do today?</label>
+
+   <br><br>
+    <h3>Your current to do list</h3>
+    <ul id="myUL">
+      <%i=0 %>
+
+
+        <table border="3px" cellspacing="8" cellpadding="5">
+          <tr>
+          <th>Tasks Pending</th>
+          <th>Edit</th>
+          <th>Completed</th>
+        </tr>
+          <% @todo.each do|todo|%>
+            <%i=i+1 %>
+            <tr> <td><%=todo.item%></td><td> <%=link_to 'EDIT',{ action: :edit, id: todo.id }, method: :get%> </td><td> <%=link_to 'DELETE',{ action: :destroy, id: todo.id }, method: :get,data: { confirm: 'Are you sure?' } %> </td></tr>
+          <% end %>
+        </table>
+
+
+      <br/><br/>
+      <h3>  you currently have <%= i%> tasks</h3>
+    </ul>
+      <ul><li><%=link_to 'ADD NEW TASK',{ action: :new}, method: :get%></li></ul>
+</center>
+</div>

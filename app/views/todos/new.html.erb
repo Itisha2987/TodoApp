@@ -1,8 +1,0 @@
-<h2>Create new task</h2>
-<%= form_for :todo, url: "/todos/create", method: "get"  do |f| %>
-  <p>
-    <%= f.label :item %><br>
-    <%= f.text_field :item %><br>
-    <%= f.submit %><br>
-  </p>
-<%end %>
