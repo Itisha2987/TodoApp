@@ -1,0 +1,7 @@
+
+<%@todo = Todo.find(params[:id]) %>
+<%=form_for @todo ,url:{action: "update"} do |f|%>
+  <%=f.label :item %>
+  <%=f.text_field :item%>
+  <%=f.submit %>
+<%end %>
